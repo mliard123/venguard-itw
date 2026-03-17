@@ -28,11 +28,11 @@ Local setup validation:
 - `npm run github:discover`
 - `npm run github:preflight`
 
-Starter skeleton is intentionally provided in:
+A helper skeleton is provided in:
 
 - `helpers/github/helpers.js`
-- `tests/github/github_issues_.spec.js`
-- `tests/github/github_comments_.spec.js`
+
+The spec files are **not provided**. The candidate must create them.
 
 ---
 
