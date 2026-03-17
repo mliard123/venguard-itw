@@ -36,16 +36,18 @@ The spec files are **not provided**. The candidate must create them.
 
 ### 1. `helpers/github/helpers.js`
 
-A domain helper file with at minimum:
+A domain helper file with at minimum.
 
-| Function | Description |
+**All functions here must use the GitHub REST API via the `request` fixture. None of them should touch the browser or the UI.**
+
+| Function | API call |
 |---|---|
-| `_getIssueCreated(request, data)` | Creates a GitHub issue in the configured repository. Returns the created issue object. |
-| `_getIssueData(request, issueNumber)` | Fetches an issue via `GET /repos/{owner}/{repo}/issues/{issue_number}`. |
-| `_updateIssue(request, issueNumber, data)` | Updates an issue title, body, or state. |
-| `_getIssueComments(request, issueNumber)` | Fetches issue comments for verification. |
-| `_addIssueComment(request, issueNumber, body)` | Adds a comment through the API when needed for setup or cleanup. |
-| `_closeIssue(request, issueNumber)` | Closes the issue for cleanup. |
+| `_getIssueCreated(request, data)` | `POST /repos/{owner}/{repo}/issues` — creates an issue, returns the created object |
+| `_getIssueData(request, issueNumber)` | `GET /repos/{owner}/{repo}/issues/{issue_number}` — fetches one issue |
+| `_updateIssue(request, issueNumber, data)` | `PATCH /repos/{owner}/{repo}/issues/{issue_number}` — updates title, body, or state |
+| `_getIssueComments(request, issueNumber)` | `GET /repos/{owner}/{repo}/issues/{issue_number}/comments` — fetches all comments |
+| `_addIssueComment(request, issueNumber, body)` | `POST /repos/{owner}/{repo}/issues/{issue_number}/comments` — adds a comment |
+| `_closeIssue(request, issueNumber)` | `PATCH /repos/{owner}/{repo}/issues/{issue_number}` with `state: closed` — cleanup |
 
 ### 2. `tests/github/issues_.spec.js`
 
