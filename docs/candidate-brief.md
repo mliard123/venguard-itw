@@ -91,11 +91,9 @@ We are looking for clear priorities:
 5. Failures are easy to debug.
 6. The implementation avoids brittle interaction patterns when a simpler one exists.
 
-## Timebox
+## Time Estimate
 
-Target effort: 2 to 3 hours.
-
-If you run out of time, prefer a smaller but clean and reliable solution over a larger incomplete one.
+A strong candidate typically completes this exercise in 2 to 3 hours. This is provided as an orientating reference only — there is no deadline and no time constraint. Take the time you need to deliver a solution you are proud of.
 
 Keep setup overhead bounded. The exercise is not intended to test GitHub administration depth beyond creating a temporary repo, a scoped token, and optionally a browser storage state.
 
@@ -120,7 +118,7 @@ Review will focus on:
 
 ## Notes
 
-This exercise is intentionally scoped so a strong candidate can complete it within the timebox using only:
+This exercise is intentionally scoped so a strong candidate can complete it in 2 to 3 hours using only:
 
 1. Issue creation through the GitHub API.
 2. Issue editing, commenting, and closing through the GitHub UI.
