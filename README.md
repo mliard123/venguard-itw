@@ -1,5 +1,20 @@
 # venguard-itw — Playwright E2E Interview Test
 
+## Getting started
+
+> **You are looking at the exercise repo. Here is what you need to do before writing a single line of test code.**
+
+1. **Fork or clone this repository** into your own GitHub account.
+2. **Create a temporary GitHub repository** that you own — this is the target your tests will run against.
+3. **Create a fine-grained personal access token** scoped only to that repository with Issues read/write permissions.
+4. **Copy `.env.example` to `.env`** and fill in your own values.
+5. Run `npm install && npm run install:browsers`.
+6. Run `npm run github:preflight` — it must pass before you write any test.
+
+Never commit your `.env` file or any token. The `.gitignore` already excludes it.
+
+---
+
 ## Context
 
 [GitHub](https://github.com) is a real production platform with a stable web UI and a documented REST API.

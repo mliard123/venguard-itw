@@ -52,22 +52,17 @@ The spec file contains a hint. Figure out the right flows from there.
 
 ## Candidate Setup
 
-Set up the exercise on your own GitHub account.
+**Clone or fork this repository first. Then set up your own GitHub target before writing any tests.**
 
-You should create or choose:
+You must create or provide:
 
-1. A temporary repository that you control.
+1. A temporary GitHub repository that you own and control.
 2. Issues enabled on that repository.
-3. A fine-grained token with Issues read/write access to that repository only.
-4. Optionally, a Playwright `storageState` file for your authenticated GitHub browser session.
+3. A fine-grained personal access token scoped only to that repository with Issues read/write permissions.
+4. A copy of `.env.example` renamed to `.env` with your own values filled in.
+5. Optionally, a Playwright `storageState` file for your authenticated GitHub browser session.
 
-Recommended setup:
-
-1. Keep your GitHub session language in English.
-2. Keep the exercise focused on repository issues only.
-3. Prefer a temporary repository so cleanup stays isolated.
-4. Run `npm run github:preflight` locally before implementing the full suite.
-5. Do not include your token, cookies, or storage-state artifacts in the submitted repository.
+Run `npm run github:preflight` before writing any test. If it fails, fix your setup first.
 
 ## Constraints
 
