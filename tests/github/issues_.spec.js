@@ -49,7 +49,7 @@ test('after creating an issue via UI, it should be visible in the UI', async ({
   ids.set({ issue_number: issueNumber });
 
   // GET the issue
-  const issueData = await hlpGitHub.getIssueData(request, issueNumber);
+  const issueData = await hlpGitHub._getIssueData(request, issueNumber);
   expect(issueData.title).toBe(issueTitle);
   expect(issueData.body).toBe(issueBody);
   expect(issueData.state).toBe('open');
@@ -82,7 +82,7 @@ test('after creating an issue via API, edit it and assert via API', async ({
   expect(issue.number).toBe(issue.number);
 
   // GET the issue
-  const getIssue = await hlpGitHub.getIssueData(request, issue.number);
+  const getIssue = await hlpGitHub._getIssueData(request, issue.number);
   expect(getIssue.title).toBe(issueTitle);
   expect(getIssue.body).toBe(issueBody);
   expect(getIssue.state).toBe('open');
@@ -133,7 +133,7 @@ test('after creating an issue via API, edit it and assert via API', async ({
   ]);
 
   //GET the issue after update
-  const getIssueAfterUpdate = await hlpGitHub.getIssueData(
+  const getIssueAfterUpdate = await hlpGitHub._getIssueData(
     request,
     issue.number
   );
@@ -168,7 +168,7 @@ test('after creating an issue via API, close it and assert via API', async ({
   expect(issue.number).toBe(issue.number);
 
   // GET the issue
-  const getIssue = await hlpGitHub.getIssueData(request, issue.number);
+  const getIssue = await hlpGitHub._getIssueData(request, issue.number);
   expect(getIssue.title).toBe(issueTitle);
   expect(getIssue.body).toBe(issueBody);
   expect(getIssue.state).toBe('open');
@@ -204,7 +204,7 @@ test('after creating an issue via API, close it and assert via API', async ({
   ]);
 
   // GET the closed issue
-  const getClosedIssue = await hlpGitHub.getIssueData(request, issue.number);
+  const getClosedIssue = await hlpGitHub._getIssueData(request, issue.number);
   expect(getClosedIssue.title).toBe(issueTitle);
   expect(getClosedIssue.body).toBe(issueBody);
   expect(getClosedIssue.state).toBe('open');

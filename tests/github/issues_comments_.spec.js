@@ -66,7 +66,7 @@ test('after creating a comment via UI, it should be visible via API', async ({
   ]);
 
   // GET the issue
-  const issueData = await hlpGitHub.getIssueData(request, issueNumber);
+  const issueData = await hlpGitHub._getIssueData(request, issueNumber);
   expect(issueData.title).toBe(issueTitle);
   expect(issueData.body).toBe(issueBody);
   expect(issueData.comments).toBe(1);
@@ -103,7 +103,7 @@ test('after creating a comment via API, edit it and assert via API', async ({
   expect(issue.number).toBe(issue.number);
 
   // GET the issue
-  const getIssue = await hlpGitHub.getIssueData(request, issue.number);
+  const getIssue = await hlpGitHub._getIssueData(request, issue.number);
   expect(getIssue.title).toBe(issueTitle);
   expect(getIssue.body).toBe(issueBody);
   expect(getIssue.state).toBe('open');
@@ -152,7 +152,7 @@ test('after creating a comment via API, edit it and assert via API', async ({
   ]);
 
   // GET the issue after update
-  const issueData = await hlpGitHub.getIssueData(request, issue.number);
+  const issueData = await hlpGitHub._getIssueData(request, issue.number);
   expect(issueData.title).toBe(issueTitle);
   expect(issueData.body).toBe(issueBody);
   expect(issueData.comments).toBe(1);
@@ -191,7 +191,7 @@ test('after creating a comment via API, delete it and assert via API', async ({
   expect(issue.number).toBe(issue.number);
 
   // GET the issue
-  const getIssue = await hlpGitHub.getIssueData(request, issue.number);
+  const getIssue = await hlpGitHub._getIssueData(request, issue.number);
   expect(getIssue.title).toBe(issueTitle);
   expect(getIssue.body).toBe(issueBody);
   expect(getIssue.state).toBe('open');
@@ -239,7 +239,7 @@ test('after creating a comment via API, delete it and assert via API', async ({
   ]);
 
   // GET the issue after update
-  const issueData = await hlpGitHub.getIssueData(request, issue.number);
+  const issueData = await hlpGitHub._getIssueData(request, issue.number);
   expect(issueData.title).toBe(issueTitle);
   expect(issueData.body).toBe(issueBody);
   expect(issueData.comments).toBe(0);
