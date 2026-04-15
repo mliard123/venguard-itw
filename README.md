@@ -262,7 +262,7 @@ npx playwright test --headed        # with browser visible
 | Architecture | Flat `test()`, no `describe`, no POM, inline setup |
 | Async | `Promise.all([waitForResponse, action])` — no `waitForTimeout` |
 | Locators | Semantic (`getByRole`, `getByLabel`, `getByPlaceholder`) |
-| Assertions | API-based (`_getIssueData`, `_getIssueComments`) — not `toBeVisible()` |
+| Assertions | API-based (`getIssueData`, `_getIssueComments`) — not `toBeVisible()` |
 | Helpers | Domain logic in `helpers/github/helpers.js`, not inline |
 | Auth | Sensible handling of the candidate's own GitHub token and browser session |
 | Cleanup | Issues closed via API at end of each test |

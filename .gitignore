@@ -2,6 +2,7 @@
 .env.local
 .env.*
 !.env.example
+.prettierrc
 storageState.json
 storage-state.json
 *.storageState.json
